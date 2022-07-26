@@ -4,17 +4,126 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <title>André Castro | Front-end Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     
     <header class="header" id="header">
-        <span class="logo-1">André Castro</span>
-        <span></span>
+        <div class="logo"></div>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Skills</a>
+                </li>
+                <li>
+                    <a href="#">Projects</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </nav>
     </header>
 
+    <section class="main" id="main">
+        <h1>Front-end developer and geek</h1>
+        <h2>I transform beautiful designs into <span>functional interfaces</span>.</h2>
+        <h3>Do you want to see more about me?</h3>
 
-    <script></script>
+        <img src="img/arrow-down.png" alt="arrow-down">
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-wrapper">
+            <img src="img/profile_001.png" alt="">
+            <div class="about-text">
+                <h4>About</h4>
+                <p>
+                    Hi!
+                    My name is André Castro and, I am brazilian and as you saw at the beginning of this webpage, I'm a  <span>Front-end Developer</span> and a geek guy, but before working as a developer I started to work in hospitality as a recepcionistfor 8 years, so I developed communication skills and proactivity. I am a passionated for coding, I usually say that I love to see the 'magic' of codes transforming into beautiful and functional interfaces.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills">
+        <h2>Skills</h2>
+        <div class="skills-wrapper">
+            <img src="img/html-icon.png" alt="html-icon">
+            <img src="img/css-icon.png" alt="css-icon">
+            <img src="img/js.icon.png" alt="js-icon">
+            <img src="img/sass-icon.png" alt="sass-icon">
+            <img src="img/git-icon.png" alt="git-icon">
+        </div>
+    </section>
+
+    <section class="projects">
+        <h2>Projects</h2>
+        <div class="projects-wrapper">
+            <div class="project">
+                <img src="img/project001.png" alt="project-01">
+                <a target="_blank" href="">Portfolio Webpage</a>
+            </div>
+            <div class="project">
+                <img src="img/project002.png" alt="project-02">
+                <a target="_blank" href="https://andrefscastro.github.io/to-do-list-project/">To do list</a>
+            </div>
+            <div class="project">
+                <img src="img/project003.png" alt="project-03">
+                <a target="_blank" href="https://andrefscastro.github.io/project-preview-card/">Card Component Project</a>
+            </div>
+            <div class="project">
+                <img src="img/project004.png" alt="project-04">
+                <a target="_blank" href="https://andrefscastro.github.io/desafio-pagina.captura/">Capture Page</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact">
+        <h2>Contact</h2>
+
+        <div class="form-wrapper">
+            <form action="https://app.us13.list-manage.com/subscribe/post?u=b2ff08fad113c995185bd90eb&amp;id=addfc1b106" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                <div>
+                    <label>
+                        <input type="text" value="" name="FNAME" placeholder="Type your name">
+                        <span class="erro"></span>
+                    </label>
+                </div>
+        
+                <div>
+                    <label>
+                        <input type="email" placeholder="Type your email" name="EMAIL">
+                        <span class="erro"></span>
+                    </label>
+                </div>
+        
+                <div>
+                    <label>
+                        <input type="text" placeholder="Type your message" name="MMERGE2">
+                        <span class="erro"></span>
+                    </label>
+                </div>
+
+                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_b2ff08fad113c995185bd90eb_addfc1b106" tabindex="-1" value=""></div>
+                <div class="optionalParent">
+                    <div class="clear foot">
+                        <input target="_blank" class="submit" type="submit" value="Send" name="subscribe" id="mc-embedded-subscribe" class="button">
+        </div>
+            </form>
+        </div>
+    </section>
+
+
+    <script src="js/script.js"></script>
 </body>
 </html>
