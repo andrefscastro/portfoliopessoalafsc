@@ -9,10 +9,9 @@ body {
   font-family: "Roboto Condensed", sans-serif;
   color: #ffffff;
   background-image: url(../img/grunge-wall-texture.jpg);
-  background-size: contain;
+  background-size: cover;
   background-position: top;
   background-attachment: fixed;
-  filter: drop-shadow(0px 40px 5px black);
 }
 
 header {
@@ -61,15 +60,20 @@ header nav ul li a:hover {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  padding: 40px 20px 0 20px;
+  padding: 50px 60px;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
   text-shadow: 0px 0px 8px;
   text-align: center;
+  flex-wrap: wrap;
 }
-.main h1 {
+.main .main-wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+.main .main-wrapper h1 {
   color: #ffffff;
   font-weight: 400;
   font-size: 5rem;
@@ -77,7 +81,7 @@ header nav ul li a:hover {
   -webkit-animation: fade 2s 0.5s ease-in-out both;
           animation: fade 2s 0.5s ease-in-out both;
 }
-.main h2 {
+.main .main-wrapper h2 {
   font-weight: 300;
   color: #ffffff;
   font-size: 2.5rem;
@@ -85,11 +89,11 @@ header nav ul li a:hover {
   -webkit-animation: fade-2 2s 2.8s ease-in-out both;
           animation: fade-2 2s 2.8s ease-in-out both;
 }
-.main h2 span {
+.main .main-wrapper h2 span {
   font-weight: 400;
   color: orange;
 }
-.main h3 {
+.main .main-wrapper h3 {
   color: #ffffff;
   font-weight: 300;
   font-size: 6vh;
@@ -154,7 +158,7 @@ header nav ul li a:hover {
     transform: translateY(0);
   }
 }
-.main img {
+.main .main-wrapper img {
   width: 80px;
   -webkit-animation: moving 1s infinite;
           animation: moving 1s infinite;
@@ -191,6 +195,7 @@ header nav ul li a:hover {
   width: 100%;
   padding: 50px 60px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
 }
@@ -217,6 +222,7 @@ header nav ul li a:hover {
   width: 100%;
   padding: 50px 60px;
   background-color: #440277;
+  margin-bottom: 40px;
 }
 .skills h2 {
   font-size: 3rem;
@@ -259,7 +265,6 @@ header nav ul li a:hover {
 
 .projects {
   width: 100%;
-  background-color: #343a40;
 }
 .projects h2 {
   font-size: 3rem;
@@ -271,24 +276,24 @@ header nav ul li a:hover {
   text-transform: uppercase;
 }
 .projects .projects-wrapper {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
 }
 .projects .projects-wrapper .project {
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  transition: all 0.5s ease;
+  filter: drop-shadow(0 20px 10px black);
 }
 .projects .projects-wrapper .project img {
-  width: 25rem;
-  margin: 20px;
+  width: 70%;
+  margin: 40px;
   border-radius: 10px;
-  transition: all 0.5s ease;
-}
-.projects .projects-wrapper .project img:hover {
-  transform: scale(1.1);
 }
 .projects .projects-wrapper .project a {
   text-decoration: none;
@@ -299,14 +304,13 @@ header nav ul li a:hover {
   transition: all 1s;
   letter-spacing: 5px;
 }
-.projects .projects-wrapper .project a:hover {
-  color: orange;
-  transform: scale(1.4);
+.projects .projects-wrapper .project:hover {
+  transform: scale(1.1);
 }
 
 .contact {
   width: 100%;
-  background-color: #440277;
+  padding: 40px 0;
 }
 .contact h2 {
   font-size: 3rem;
@@ -347,9 +351,47 @@ header nav ul li a:hover {
   font-size: 16px;
   outline: 0;
 }
+.contact .form-wrapper form div label input::-moz-placeholder {
+  font-size: 18px;
+  font-weight: 300;
+}
+.contact .form-wrapper form div label input:-ms-input-placeholder {
+  font-size: 18px;
+  font-weight: 300;
+}
+.contact .form-wrapper form div label input::placeholder {
+  font-size: 18px;
+  font-weight: 300;
+}
+.contact .form-wrapper form div label .message {
+  width: 100%;
+  height: 200px;
+  border-radius: 8px;
+  margin-top: 10px;
+  box-shadow: 0px 10px 30px black;
+  border-style: none;
+  padding: 15px 16px;
+  resize: none;
+}
+.contact .form-wrapper form div label .message:focus {
+  font-size: 16px;
+  outline: 0;
+}
+.contact .form-wrapper form div label .message::-moz-placeholder {
+  font-size: 22px;
+  font-weight: 300;
+}
+.contact .form-wrapper form div label .message:-ms-input-placeholder {
+  font-size: 22px;
+  font-weight: 300;
+}
+.contact .form-wrapper form div label .message::placeholder {
+  font-size: 22px;
+  font-weight: 300;
+}
 .contact .form-wrapper form .submit {
   width: 100%;
-  padding: 10px;
+  padding: 20px;
   border-radius: 8px;
   border-style: none;
   box-shadow: 0px 10px 30px black;
@@ -366,4 +408,265 @@ header nav ul li a:hover {
 }
 .contact .form-wrapper form .submit:hover {
   border: 2px solid #ffffff;
+}
+
+.footer {
+  background-color: #343a40;
+  width: 100%;
+  padding: 40px 0;
+  text-align: center;
+  font-weight: 300;
+  font-size: 18px;
+  align-items: center;
+  justify-content: space-around;
+  display: flex;
+}
+.footer .icon-wrapper {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.footer .icon-wrapper img {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto;
+}
+.footer .icon-wrapper a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: 4px;
+}
+
+@media (max-width: 912px) {
+  header {
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0;
+  }
+  header .logo {
+    width: 400px;
+    margin-bottom: 0;
+  }
+  header nav {
+    display: none;
+  }
+  .main {
+    padding: 20px 30px;
+  }
+  .about .about-wrapper img {
+    width: 25rem;
+    border-radius: 20%;
+    margin-bottom: 60px;
+  }
+  .about .about-wrapper .about-text {
+    width: 100%;
+    line-height: 2rem;
+    font-size: 1.7rem;
+  }
+  .about .about-wrapper .about-text h4 {
+    text-align: center;
+  }
+  .skills .skills-wrapper img {
+    width: 180px;
+  }
+  .projects .projects-wrapper .project {
+    flex-direction: column;
+  }
+  .projects .projects-wrapper .project img {
+    width: 35rem;
+    margin: 40px;
+    border-radius: 10px;
+  }
+  .projects .projects-wrapper .project a {
+    font-size: 22px;
+  }
+  .contact .form-wrapper {
+    padding: 0 80px;
+  }
+  .contact .form-wrapper form {
+    width: 100%;
+  }
+  .contact .form-wrapper form div {
+    margin-bottom: 40px;
+  }
+  .contact .form-wrapper form div label input::-moz-placeholder {
+    font-size: 20px;
+  }
+  .contact .form-wrapper form div label input:-ms-input-placeholder {
+    font-size: 20px;
+  }
+  .contact .form-wrapper form div label input::placeholder {
+    font-size: 20px;
+  }
+  .footer {
+    background-color: #343a40;
+    width: 100%;
+    padding: 40px 0;
+    text-align: center;
+    font-weight: 300;
+    font-size: 18px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .footer .icon-wrapper {
+    justify-content: center;
+    margin-top: 40px;
+  }
+  .footer .icon-wrapper img {
+    width: 50px;
+    height: 50px;
+  }
+}
+@media (max-width: 540px) {
+  header {
+    margin: 10px 0;
+  }
+  header .logo {
+    width: 300px;
+    margin-bottom: 0;
+  }
+  header nav {
+    display: none;
+  }
+  .main .main-wrapper {
+    flex-wrap: wrap;
+    height: 100vh;
+  }
+  .main .main-wrapper h1 {
+    font-size: 50px;
+    margin-bottom: 10px;
+  }
+  .main .main-wrapper h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 100px;
+  }
+  .main .main-wrapper h3 {
+    font-size: 30px;
+  }
+  .about .about-wrapper {
+    padding: 10px;
+  }
+  .about .about-wrapper img {
+    width: 25rem;
+    border-radius: 20%;
+    margin-bottom: 60px;
+  }
+  .about .about-wrapper .about-text {
+    width: 100%;
+    line-height: 2rem;
+    font-size: 1.4rem;
+    text-align: center;
+  }
+  .about .about-wrapper .about-text h4 {
+    text-align: center;
+  }
+  .skills h2 {
+    margin-bottom: 40px;
+  }
+  .skills .skills-wrapper {
+    height: 100vh;
+    justify-content: space-around;
+  }
+  .skills .skills-wrapper img {
+    width: 40%;
+  }
+  .projects .projects-wrapper .project {
+    flex-direction: column;
+  }
+  .projects .projects-wrapper .project img {
+    width: 25rem;
+    margin: 40px;
+    border-radius: 10px;
+  }
+  .projects .projects-wrapper .project a {
+    font-size: 22px;
+  }
+  .contact .form-wrapper {
+    padding: 0 80px;
+  }
+  .contact .form-wrapper form {
+    width: 100%;
+  }
+  .contact .form-wrapper form div {
+    margin-bottom: 40px;
+  }
+  .contact .form-wrapper form div label input::-moz-placeholder {
+    font-size: 20px;
+  }
+  .contact .form-wrapper form div label input:-ms-input-placeholder {
+    font-size: 20px;
+  }
+  .contact .form-wrapper form div label input::placeholder {
+    font-size: 20px;
+  }
+  .footer {
+    background-color: #343a40;
+    width: 100%;
+    padding: 40px 0;
+    text-align: center;
+    font-weight: 300;
+    font-size: 18px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .footer .icon-wrapper {
+    justify-content: center;
+    margin-top: 40px;
+  }
+  .footer .icon-wrapper img {
+    width: 50px;
+    height: 50px;
+  }
+}
+@media (max-width: 412px) {
+  .about {
+    padding: 40px;
+  }
+  .about .about-wrapper {
+    align-items: center;
+    justify-content: center;
+  }
+  .about .about-wrapper img {
+    width: 15rem;
+  }
+  .about .about-wrapper .about-text {
+    padding: 20px;
+    text-align: justify;
+  }
+  .projects {
+    width: 100%;
+    padding: 20px;
+  }
+  .projects .projects-wrapper {
+    width: 100%;
+    padding: 20px;
+  }
+  .projects .projects-wrapper .project {
+    width: 100%;
+  }
+  .projects .projects-wrapper .project img {
+    width: 90%;
+  }
+  .contact {
+    padding: 0;
+  }
+  .contact .form-wrapper {
+    padding: 20px;
+  }
+  .contact .form-wrapper form {
+    width: 90%;
+  }
+  .footer {
+    justify-content: center;
+    width: 100%;
+    font-size: 16px;
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -34,11 +34,13 @@
     </header>
 
     <section class="main" id="main">
-        <h1>Front-end developer and geek</h1>
-        <h2>I transform beautiful designs into <span>functional interfaces</span>.</h2>
-        <h3>Do you want to see more about me?</h3>
+        <div class="main-wrapper">
+            <h1>Front-end developer and geek</h1>
+            <h2>I transform beautiful designs into <span>functional interfaces</span>.</h2>
+            <h3>Do you want to see more about me?</h3>
 
-        <img src="img/arrow-down.png" alt="arrow-down">
+            <img src="img/arrow-down.png" alt="arrow-down">
+        </div>
     </section>
 
     <section class="about" id="about">
@@ -48,7 +50,7 @@
                 <h4>About</h4>
                 <p>
                     Hi!
-                    My name is André Castro and, I am brazilian and as you saw at the beginning of this webpage, I'm a  <span>Front-end Developer</span> and a geek guy, but before working as a developer I started to work in hospitality as a recepcionistfor 8 years, so I developed communication skills and proactivity. I am a passionated for coding, I usually say that I love to see the 'magic' of codes transforming into beautiful and functional interfaces.
+                    My name is André Castro and, I am brazilian and as you saw at the beginning of this webpage, I'm a  <span>Front-end Developer</span> and a geek guy, but before working as a developer I started to work in hospitality as a recepcionist for 8 years, so I developed communication skills and proactivity. I am a passionated for codding, I usually say that I love to see the 'magic' of codes transforming into beautiful and functional interfaces.
                 </p>
             </div>
         </div>
@@ -108,7 +110,7 @@
         
                 <div>
                     <label>
-                        <input type="text" placeholder="Type your message" name="MMERGE2">
+                        <textarea class="message" placeholder="Type your message" name="MMERGE2" cols="1" rows="10"></textarea>
                         <span class="erro"></span>
                     </label>
                 </div>
@@ -118,10 +120,19 @@
                 <div class="optionalParent">
                     <div class="clear foot">
                         <input target="_blank" class="submit" type="submit" value="Send" name="subscribe" id="mc-embedded-subscribe" class="button">
-        </div>
+                </div>
+                
             </form>
         </div>
     </section>
+
+    <footer class="footer" id="footer">
+        <span>© Copyright - All rights reserved - A.Castro front-end</span>
+        <div class="icon-wrapper">
+            <img src="img/github-icon.png" alt="github-icon">
+            <a target="_blank" href="https://github.com/andrefscastro">Github - repositories</a>
+        </div>
+    </footer>
 
 
     <script src="js/script.js"></script>
