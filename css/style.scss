@@ -5,7 +5,7 @@
 }
 
 $font-primary: 'Roboto Condensed', sans-serif;
-$color-primary: #343a40;
+$color-primary: #1c2229;
 $color-secondary: #440277;
 $color-terciary: #ffffff;
 $color-letter-primary: #ffffff;
@@ -27,12 +27,13 @@ header {
     width: 100%;
     padding: 10px 60px;
     position: relative;
+    transition:  1s;
+    z-index: 99;
     
-
-
     .logo {
         width: 300px;
-        height: 150px;
+        height: 100px;
+        padding-top: 20px;
         background-image: url(../img/ac-logotp.png);
         background-size: contain;
         background-position: center;
@@ -42,24 +43,92 @@ header {
 
     img {
         position: absolute;
-        right: 20px;
-        top: 100px;
+        right: 50px;
+        top: 35px;
         cursor: pointer;
+        transition: 0.5s;
+
+        &:hover {
+            filter: drop-shadow(0 0 3px orange);
+        }
     }
 
 }
 
+.fixedHeader {
+    background-image: url(../img/deep-blue-texture-background.jpg);
+    background-size: cover;
+    background-position: top;
+    position: fixed;
+    width: 100%;
+    padding: 10px 60px;
+    box-shadow: 0 5px 20px black;
+    z-index: 99;
+    top: -100%;
+    transition: all 800ms ease-in-out;
+   
+
+    .logo {
+        width: 300px;
+        height: 100px;
+        padding-top: 20px;
+        background-image: url(../img/ac-logotp.png);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin: 0 auto;
+    }
+
+    .mobileMenu {
+        
+        width: 40px;
+        height: 40px;
+        right: 20px;
+        top: 85px;
+        margin-top: 40px;
+
+        cursor: pointer;
+            transition: 0.5s;
+
+        img {
+            
+            &:hover {
+                filter: drop-shadow(0 0 3px orange);
+            }
+        }
+    }
+}
+
+.fixedActive {
+    top: 0%;
+    
+}
+
+.mobileMenuActive {
+    top: 100px;
+}
+
 nav {
-    display: none;
-    transition: all 500ms ease-in;
-    filter: drop-shadow(0px 20px 2px black);
+    width: 300px;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    background-image: url(../img/deep-blue-texture-background.jpg);
+    background-size: cover;
+    padding: 10px;
+    z-index: 999;
+    background-position: bottom;
+    transition: all 800ms ease;
+    box-shadow: (0px 20px 30px orange);
+    padding-top: 80px;
 
     ul {
         list-style-type: none;
-        margin-bottom: 20px;
+        
         li {
             margin: 0 auto;
-            width: 50%;
+            width: 100%;
             text-align: center;
             padding: 20px;
             border-bottom: 2px solid orange;
@@ -68,7 +137,6 @@ nav {
                 text-decoration: none;
                 color: $color-letter-primary;
                 font-size: 20px;
-                padding: 7px 45px;
                 transition: all .35s ease;
                 font-weight: 300;
                 letter-spacing: 6px;
@@ -80,25 +148,15 @@ nav {
             }
         }
     }
-
-    &+.openned {
-        display: block;
-    }
-
-    &+.fixed {
-        position: fixed;
-        top: 0;
-        z-index: 99;
-        background-image: url(../img/deep-blue-texture-background.jpg);
-        background-size: cover;
-        transition: all .5s;
-    }
 }
 
+.open {
+    left: 0%;
+}
 
 .main {
     width: 100%;
-    height: 80vh;
+    height: 100vh;
     background-image: url(../img/galaxy-night-view.jpg);
     background-size: cover;
     background-position: center;
@@ -121,6 +179,7 @@ nav {
             font-weight: 400;
             font-size: 5rem;
             margin-bottom: 40px;
+            margin-top: 80px;
             animation: fade 2s 0.5s ease-in-out both;
         }
     
@@ -468,9 +527,8 @@ nav {
 
 @media (max-width: 912px) {
     header {
-        align-items: center;
-        justify-content: center;
         margin: 30px 0;
+        padding: 40px;
         .logo {
             width: 400px;
             margin-bottom: 0;
@@ -808,9 +866,9 @@ nav {
 
         .form-wrapper {
 
+
             form {
                 width: 90%;
-                
             }
         }
     }

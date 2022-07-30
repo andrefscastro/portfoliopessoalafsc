@@ -16,9 +16,20 @@
     <header class="header" id="header">
         <div class="logo"></div>
         
-        <img src="img/menu.png" alt="mobile-menu">
+        <div onclick="slideMenu" class="mobileMenu" id="mobileMenu">
+            <img src="img/menu.png" alt="mobile-menu">
+        </div>
     </header>
-    <nav class="mobile-menu" id="mobile-menu">
+
+    <header class="fixedHeader" id="fixedHeader">
+        <div class="logo"></div>
+        
+        <div id="mobileButtonMenu" class="mobileButtonMenu" onclick="slideMenu">
+            <img src="img/menu.png" alt="mobile-menu">
+        </div>
+    </header>
+
+    <nav id="mobileMenu" class="mobileMenu">
         <ul>
             <li>
                 <a href="#about">About</a>

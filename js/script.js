@@ -1,13 +1,42 @@
-window.onscroll = function() {fixedMenu()};
 
-var header = document.getElementById('mobile-menu');
 
-var sticky = header.offsetTop;
+/*Scroll function with header*/
 
-function fixedMenu() {
-    if (window.pageYoffset > sticky) {
-        header.classList.add('fixed')
+window.onscroll = function() {scrollFunction()};
+
+const fixedHeader =  document.getElementById("fixedHeader");
+
+const mobileMenu = document.getElementById("mobileMenu")
+
+
+
+function scrollFunction() {
+    if (window.scrollY >= 40) {
+        fixedHeader.classList.add("fixedActive");
+        mobileMenu.classList.add("mobileMenuActive")
     } else {
-        header.classList.remove('fixed')
+        fixedHeader.classList.remove("fixedActive");
+        mobileMenu.classList.remove("mobileMenuActive");
     }
 }
+
+/**Finished */
+
+/**Toggle Menu function*/
+
+let slider = document.getElementById("mobilMenu");
+
+let open = false;
+
+function slideMenu() {
+
+    if (open === true){
+        open = false
+        slider.classList.remove("open")
+    } else if (open === false) {
+        open = true
+        slider.classList.add("open")
+    }
+        
+}
+
