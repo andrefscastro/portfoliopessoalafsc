@@ -8,19 +8,15 @@ body {
   width: 100%;
   font-family: "Roboto Condensed", sans-serif;
   color: #ffffff;
-  background-image: url(../img/grunge-wall-texture.jpg);
-  background-size: cover;
-  background-position: top;
-  background-attachment: fixed;
+  background-image: url(../img/deep-blue-texture-background.jpg);
+  background-size: contain;
+  background-position: center;
 }
 
 header {
   width: 100%;
   padding: 10px 60px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: column;
+  position: relative;
 }
 header .logo {
   width: 300px;
@@ -29,28 +25,54 @@ header .logo {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  margin-bottom: 20px;
+  margin: 0 auto;
 }
-header nav {
+header img {
+  position: absolute;
+  right: 20px;
+  top: 100px;
+  cursor: pointer;
+}
+
+nav {
+  display: none;
+  transition: all 500ms ease-in;
   filter: drop-shadow(0px 20px 2px black);
 }
-header nav ul {
+nav ul {
   list-style-type: none;
-  display: flex;
-  flex-wrap: wrap;
   margin-bottom: 20px;
 }
-header nav ul li a {
+nav ul li {
+  margin: 0 auto;
+  width: 50%;
+  text-align: center;
+  padding: 20px;
+  border-bottom: 2px solid orange;
+}
+nav ul li a {
   text-decoration: none;
   color: #ffffff;
   font-size: 20px;
   padding: 7px 45px;
   transition: all 0.35s ease;
   font-weight: 300;
+  letter-spacing: 6px;
 }
-header nav ul li a:hover {
+nav ul li a:hover {
   color: orange;
   text-shadow: 0px 0px 8px;
+}
+nav + .openned {
+  display: block;
+}
+nav + .fixed {
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  background-image: url(../img/deep-blue-texture-background.jpg);
+  background-size: cover;
+  transition: all 0.5s;
 }
 
 .main {
@@ -294,6 +316,7 @@ header nav ul li a:hover {
   width: 70%;
   margin: 40px;
   border-radius: 10px;
+  border: 2px solid #ffffff;
 }
 .projects .projects-wrapper .project a {
   text-decoration: none;
@@ -378,15 +401,15 @@ header nav ul li a:hover {
   outline: 0;
 }
 .contact .form-wrapper form div label .message::-moz-placeholder {
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 300;
 }
 .contact .form-wrapper form div label .message:-ms-input-placeholder {
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 300;
 }
 .contact .form-wrapper form div label .message::placeholder {
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 300;
 }
 .contact .form-wrapper form .submit {
@@ -450,15 +473,12 @@ header nav ul li a:hover {
     width: 400px;
     margin-bottom: 0;
   }
-  header nav {
-    display: none;
-  }
   .main {
     padding: 20px 30px;
   }
   .about .about-wrapper img {
     width: 25rem;
-    border-radius: 20%;
+    border-radius: 50%;
     margin-bottom: 60px;
   }
   .about .about-wrapper .about-text {
@@ -469,8 +489,17 @@ header nav ul li a:hover {
   .about .about-wrapper .about-text h4 {
     text-align: center;
   }
+  .skills h2 {
+    font-size: 28px;
+  }
   .skills .skills-wrapper img {
     width: 180px;
+  }
+  .projects {
+    padding: 20px;
+  }
+  .projects h2 {
+    font-size: 28px;
   }
   .projects .projects-wrapper .project {
     flex-direction: column;
@@ -483,8 +512,11 @@ header nav ul li a:hover {
   .projects .projects-wrapper .project a {
     font-size: 22px;
   }
-  .contact .form-wrapper {
-    padding: 0 80px;
+  .contact {
+    padding: 20px;
+  }
+  .contact h2 {
+    font-size: 28px;
   }
   .contact .form-wrapper form {
     width: 100%;
@@ -516,10 +548,11 @@ header nav ul li a:hover {
   .footer .icon-wrapper {
     justify-content: center;
     margin-top: 40px;
+    font-size: 12px;
   }
   .footer .icon-wrapper img {
-    width: 50px;
-    height: 50px;
+    width: 32px;
+    height: 32px;
   }
 }
 @media (max-width: 540px) {
@@ -530,12 +563,11 @@ header nav ul li a:hover {
     width: 300px;
     margin-bottom: 0;
   }
-  header nav {
-    display: none;
+  .main {
+    height: 110vh;
   }
   .main .main-wrapper {
     flex-wrap: wrap;
-    height: 100vh;
   }
   .main .main-wrapper h1 {
     font-size: 50px;
@@ -544,51 +576,56 @@ header nav ul li a:hover {
   .main .main-wrapper h2 {
     font-size: 30px;
     text-align: center;
-    margin-bottom: 100px;
   }
   .main .main-wrapper h3 {
     font-size: 30px;
   }
+  .about {
+    padding: 80px 20px 20px 20px;
+  }
   .about .about-wrapper {
-    padding: 10px;
+    padding: 0;
   }
   .about .about-wrapper img {
-    width: 25rem;
-    border-radius: 20%;
+    width: 20rem;
     margin-bottom: 60px;
   }
   .about .about-wrapper .about-text {
     width: 100%;
     line-height: 2rem;
-    font-size: 1.4rem;
-    text-align: center;
+    font-size: 16px;
   }
   .about .about-wrapper .about-text h4 {
     text-align: center;
+  }
+  .skills {
+    padding: 10px;
   }
   .skills h2 {
     margin-bottom: 40px;
   }
   .skills .skills-wrapper {
+    padding: 0;
     height: 100vh;
     justify-content: space-around;
   }
   .skills .skills-wrapper img {
     width: 40%;
+    padding: 10px;
+  }
+  .projects .projects-wrapper {
+    padding: 20px;
   }
   .projects .projects-wrapper .project {
     flex-direction: column;
   }
   .projects .projects-wrapper .project img {
-    width: 25rem;
+    width: 100%;
     margin: 40px;
     border-radius: 10px;
   }
   .projects .projects-wrapper .project a {
-    font-size: 22px;
-  }
-  .contact .form-wrapper {
-    padding: 0 80px;
+    font-size: 18px;
   }
   .contact .form-wrapper form {
     width: 100%;
@@ -627,19 +664,28 @@ header nav ul li a:hover {
   }
 }
 @media (max-width: 412px) {
-  .about {
-    padding: 40px;
+  header {
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0px;
+  }
+  header .logo {
+    width: 200px;
+  }
+  .main {
+    padding-top: 120px;
+  }
+  .main h3 {
+    margin-bottom: 20px;
   }
   .about .about-wrapper {
+    padding: 0;
     align-items: center;
     justify-content: center;
   }
   .about .about-wrapper img {
     width: 15rem;
-  }
-  .about .about-wrapper .about-text {
-    padding: 20px;
-    text-align: justify;
   }
   .projects {
     width: 100%;
@@ -657,9 +703,6 @@ header nav ul li a:hover {
   }
   .contact {
     padding: 0;
-  }
-  .contact .form-wrapper {
-    padding: 20px;
   }
   .contact .form-wrapper form {
     width: 90%;
