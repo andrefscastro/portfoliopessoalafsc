@@ -6,17 +6,13 @@ window.onscroll = function() {scrollFunction()};
 
 const fixedHeader =  document.getElementById("fixedHeader");
 
-const mobileMenu = document.getElementById("mobileMenu")
-
 
 
 function scrollFunction() {
     if (window.scrollY >= 40) {
         fixedHeader.classList.add("fixedActive");
-        mobileMenu.classList.add("mobileMenuActive")
     } else {
         fixedHeader.classList.remove("fixedActive");
-        mobileMenu.classList.remove("mobileMenuActive");
     }
 }
 
@@ -24,7 +20,7 @@ function scrollFunction() {
 
 /**Toggle Menu function*/
 
-let slider = document.getElementById("mobilMenu");
+let slider = document.querySelector("mobileMenu nav");
 
 let open = false;
 
@@ -40,3 +36,12 @@ function slideMenu() {
         
 }
 
+/**Finished */
+
+/**Animation when click on a internal link */
+
+const menuItems = document.querySelectorAll('.menu a[href^="#"]');
+
+menuItems.forEach(item => {
+    item.addEventListener('click')
+})

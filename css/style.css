@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 body {
@@ -14,11 +15,17 @@ body {
 }
 
 header {
+  background-image: url(../img/deep-blue-texture-background.jpg);
+  background-size: cover;
+  background-position: top;
   width: 100%;
-  padding: 10px 60px;
-  position: relative;
+  padding: 20px 60px;
   transition: 1s;
   z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 header .logo {
   width: 300px;
@@ -30,15 +37,32 @@ header .logo {
   background-repeat: no-repeat;
   margin: 0 auto;
 }
-header img {
-  position: absolute;
-  right: 50px;
-  top: 35px;
-  cursor: pointer;
-  transition: 0.5s;
+header nav {
+  width: 100%;
 }
-header img:hover {
-  filter: drop-shadow(0 0 3px orange);
+header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  list-style-type: none;
+}
+header nav ul li {
+  margin: 0 auto;
+  text-align: center;
+}
+header nav ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 16px;
+  transition: all 0.35s ease;
+  font-weight: 300;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+}
+header nav ul li a:hover {
+  color: orange;
+  text-shadow: 0px 0px 8px;
 }
 
 .fixedHeader {
@@ -52,6 +76,10 @@ header img:hover {
   z-index: 99;
   top: -100%;
   transition: all 800ms ease-in-out;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .fixedHeader .logo {
   width: 300px;
@@ -63,63 +91,36 @@ header img:hover {
   background-repeat: no-repeat;
   margin: 0 auto;
 }
-.fixedHeader .mobileMenu {
-  width: 40px;
-  height: 40px;
-  right: 20px;
-  top: 85px;
-  margin-top: 40px;
-  cursor: pointer;
-  transition: 0.5s;
+.fixedHeader nav {
+  width: 100%;
 }
-.fixedHeader .mobileMenu img:hover {
-  filter: drop-shadow(0 0 3px orange);
-}
-
-.fixedActive {
-  top: 0%;
-}
-
-.mobileMenuActive {
-  top: 100px;
-}
-
-nav {
-  width: 300px;
-  height: 100vh;
-  position: absolute;
-  top: 0;
-  left: -100%;
-  background-image: url(../img/deep-blue-texture-background.jpg);
-  background-size: cover;
-  padding: 10px;
-  z-index: 999;
-  background-position: bottom;
-  transition: all 800ms ease;
-  box-shadow: 0px 20px 30px orange;
-  padding-top: 80px;
-}
-nav ul {
+.fixedHeader nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
   list-style-type: none;
 }
-nav ul li {
+.fixedHeader nav ul li {
   margin: 0 auto;
-  width: 100%;
   text-align: center;
-  padding: 20px;
-  border-bottom: 2px solid orange;
 }
-nav ul li a {
+.fixedHeader nav ul li a {
   text-decoration: none;
   color: #ffffff;
-  font-size: 20px;
+  font-size: 16px;
   transition: all 0.35s ease;
   font-weight: 300;
   letter-spacing: 6px;
+  text-transform: uppercase;
 }
-nav ul li a:hover {
+.fixedHeader nav ul li a:hover {
   color: orange;
   text-shadow: 0px 0px 8px;
+}
+
+.fixedActive {
+  top: -10px;
 }
 
 .open {
@@ -516,13 +517,34 @@ nav ul li a:hover {
 }
 
 @media (max-width: 912px) {
-  header {
-    margin: 30px 0;
-    padding: 40px;
+  header, .fixedHeader {
+    margin: 0px 0;
+    padding: 10px;
+    justify-content: center;
+    flex-wrap: nowrap;
   }
-  header .logo {
-    width: 400px;
-    margin-bottom: 0;
+  header .logo, .fixedHeader .logo {
+    width: 300px;
+    height: 100px;
+    margin: 10px;
+    background-size: contain;
+  }
+  header nav, .fixedHeader nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  header nav ul, .fixedHeader nav ul {
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  header nav ul li, .fixedHeader nav ul li {
+    padding: 10px;
+    width: 120px;
+    height: 40px;
   }
   .main {
     padding: 20px 30px;
@@ -607,12 +629,29 @@ nav ul li a:hover {
   }
 }
 @media (max-width: 540px) {
-  header {
+  header, .fixedHeader {
     margin: 10px 0;
+    flex-wrap: wrap;
+    padding: 0;
   }
-  header .logo {
-    width: 300px;
+  header .logo, .fixedHeader .logo {
+    width: 200px;
     margin-bottom: 0;
+    background-size: contain;
+  }
+  header nav, .fixedHeader nav {
+    width: 100%;
+  }
+  header nav ul, .fixedHeader nav ul {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+  }
+  header nav ul li, .fixedHeader nav ul li {
+    width: 110px;
+  }
+  header nav ul li a, .fixedHeader nav ul li a {
+    font-size: 12px;
   }
   .main {
     height: 110vh;

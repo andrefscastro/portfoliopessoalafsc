@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 $font-primary: 'Roboto Condensed', sans-serif;
@@ -24,11 +25,17 @@ body {
 
 
 header {
+    background-image: url(../img/deep-blue-texture-background.jpg);
+    background-size: cover;
+    background-position: top;
     width: 100%;
-    padding: 10px 60px;
-    position: relative;
+    padding: 20px 60px;
     transition:  1s;
     z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     
     .logo {
         width: 300px;
@@ -41,17 +48,41 @@ header {
         margin: 0 auto;
     }
 
-    img {
-        position: absolute;
-        right: 50px;
-        top: 35px;
-        cursor: pointer;
-        transition: 0.5s;
-
-        &:hover {
-            filter: drop-shadow(0 0 3px orange);
+    nav {
+        width: 100%;
+    
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-around;
+            list-style-type: none;
+            
+            li {
+                margin: 0 auto;
+                
+                text-align: center;
+                
+    
+                a {
+                    text-decoration: none;
+                    color: $color-letter-primary;
+                    font-size: 16px;
+                    transition: all .35s ease;
+                    font-weight: 300;
+                    letter-spacing: 6px;
+                    text-transform: uppercase;
+                    
+                    &:hover{
+                        color: orange;
+                        text-shadow: 0px 0px 8px;
+                    }
+                }
+            }
         }
+    
     }
+
 
 }
 
@@ -66,6 +97,10 @@ header {
     z-index: 99;
     top: -100%;
     transition: all 800ms ease-in-out;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
    
 
     .logo {
@@ -79,76 +114,48 @@ header {
         margin: 0 auto;
     }
 
-    .mobileMenu {
-        
-        width: 40px;
-        height: 40px;
-        right: 20px;
-        top: 85px;
-        margin-top: 40px;
-
-        cursor: pointer;
-            transition: 0.5s;
-
-        img {
+    nav {
+        width: 100%;
+    
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-around;
+            list-style-type: none;
             
-            &:hover {
-                filter: drop-shadow(0 0 3px orange);
+            li {
+                margin: 0 auto;
+                
+                text-align: center;
+                
+    
+                a {
+                    text-decoration: none;
+                    color: $color-letter-primary;
+                    font-size: 16px;
+                    transition: all .35s ease;
+                    font-weight: 300;
+                    letter-spacing: 6px;
+                    text-transform: uppercase;
+                    
+                    &:hover{
+                        color: orange;
+                        text-shadow: 0px 0px 8px;
+                    }
+                }
             }
         }
+    
     }
 }
 
 .fixedActive {
-    top: 0%;
+    top: -10px;
     
 }
 
-.mobileMenuActive {
-    top: 100px;
-}
 
-nav {
-    width: 300px;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    left: -100%;
-    background-image: url(../img/deep-blue-texture-background.jpg);
-    background-size: cover;
-    padding: 10px;
-    z-index: 999;
-    background-position: bottom;
-    transition: all 800ms ease;
-    box-shadow: (0px 20px 30px orange);
-    padding-top: 80px;
-
-    ul {
-        list-style-type: none;
-        
-        li {
-            margin: 0 auto;
-            width: 100%;
-            text-align: center;
-            padding: 20px;
-            border-bottom: 2px solid orange;
-
-            a {
-                text-decoration: none;
-                color: $color-letter-primary;
-                font-size: 20px;
-                transition: all .35s ease;
-                font-weight: 300;
-                letter-spacing: 6px;
-                
-                &:hover{
-                    color: orange;
-                    text-shadow: 0px 0px 8px;
-                }
-            }
-        }
-    }
-}
 
 .open {
     left: 0%;
@@ -526,12 +533,37 @@ nav {
 }
 
 @media (max-width: 912px) {
-    header {
-        margin: 30px 0;
-        padding: 40px;
+    header, .fixedHeader {
+        margin: 0px 0;
+        padding: 10px;
+        justify-content: center;
+        flex-wrap: nowrap;
         .logo {
-            width: 400px;
-            margin-bottom: 0;
+            width: 300px;
+            height: 100px;
+            margin: 10px;
+            background-size: contain;
+        }
+
+        nav {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            ul {
+                width: 80%;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+                
+                li {
+                    padding: 10px;
+                    width: 120px;
+                    height: 40px;
+                }
+            }
+
         }
 
     }
@@ -663,13 +695,35 @@ nav {
 }
 
 @media (max-width:540px) {
-    header {
+    header, .fixedHeader {
         margin: 10px 0;
+        flex-wrap: wrap;
+        padding: 0;
         .logo {
-            width: 300px;
+            width: 200px;
             margin-bottom: 0;
+            background-size: contain;
+        }
+
+        nav {
+            width: 100%;
+            ul {
+                flex-direction: row;
+                width: 100%;
+                justify-content: space-between;
+
+                li {
+                    width: 110px;
+                    
+                    a {
+                        font-size: 12px;
+                    }
+                }
+            }
         }
     }
+
+    
 
     .main {
 
