@@ -2,7 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 130px;
 }
 
 body {
@@ -121,10 +122,6 @@ header nav ul li a:hover {
 
 .fixedActive {
   top: -10px;
-}
-
-.open {
-  left: 0%;
 }
 
 .main {
@@ -265,6 +262,7 @@ header nav ul li a:hover {
 .about {
   width: 100%;
   padding: 50px 60px;
+  scroll-padding-top: 50px;
 }
 .about .about-wrapper {
   width: 100%;
@@ -372,6 +370,9 @@ header nav ul li a:hover {
   border: 2px solid #ffffff;
 }
 .projects .projects-wrapper .project a {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   text-decoration: none;
   text-align: center;
   font-size: 16px;
@@ -380,8 +381,10 @@ header nav ul li a:hover {
   transition: all 1s;
   letter-spacing: 5px;
 }
-.projects .projects-wrapper .project:hover {
+.projects .projects-wrapper .project a:hover {
   transform: scale(1.1);
+  color: orange;
+  text-shadow: 0 0 5px orange;
 }
 
 .contact {
@@ -517,6 +520,9 @@ header nav ul li a:hover {
 }
 
 @media (max-width: 912px) {
+  * {
+    scroll-padding-top: 100px;
+  }
   header, .fixedHeader {
     margin: 0px 0;
     padding: 10px;
@@ -569,7 +575,7 @@ header nav ul li a:hover {
     width: 180px;
   }
   .projects {
-    padding: 20px;
+    padding: 20px 20px 250px 20px;
   }
   .projects h2 {
     font-size: 28px;
@@ -586,6 +592,7 @@ header nav ul li a:hover {
     font-size: 22px;
   }
   .contact {
+    scroll-padding-top: 0;
     padding: 20px;
   }
   .contact h2 {
@@ -674,7 +681,7 @@ header nav ul li a:hover {
     padding: 80px 20px 20px 20px;
   }
   .about .about-wrapper {
-    padding: 0;
+    padding: 20px 20px 200px 20px;
   }
   .about .about-wrapper img {
     width: 20rem;
@@ -689,7 +696,7 @@ header nav ul li a:hover {
     text-align: center;
   }
   .skills {
-    padding: 10px;
+    padding: 100px 20px 20px 20px;
   }
   .skills h2 {
     margin-bottom: 40px;
@@ -769,6 +776,9 @@ header nav ul li a:hover {
   .main h3 {
     margin-bottom: 20px;
   }
+  .about {
+    scroll-margin-top: 100px;
+  }
   .about .about-wrapper {
     padding: 0;
     align-items: center;
@@ -777,7 +787,11 @@ header nav ul li a:hover {
   .about .about-wrapper img {
     width: 15rem;
   }
+  .skills {
+    scroll-margin-top: 90px;
+  }
   .projects {
+    scroll-margin-top: 120px;
     width: 100%;
     padding: 20px;
   }
@@ -793,6 +807,7 @@ header nav ul li a:hover {
   }
   .contact {
     padding: 0;
+    scroll-margin-top: 120px;
   }
   .contact .form-wrapper form {
     width: 90%;

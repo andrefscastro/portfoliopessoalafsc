@@ -18,30 +18,14 @@ function scrollFunction() {
 
 /**Finished */
 
-/**Toggle Menu function*/
-
-let slider = document.querySelector("mobileMenu nav");
-
-let open = false;
-
-function slideMenu() {
-
-    if (open === true){
-        open = false
-        slider.classList.remove("open")
-    } else if (open === false) {
-        open = true
-        slider.classList.add("open")
-    }
-        
-}
-
-/**Finished */
-
 /**Animation when click on a internal link */
 
-const menuItems = document.querySelectorAll('.menu a[href^="#"]');
+var link = $('a');
 
-menuItems.forEach(item => {
-    item.addEventListener('click')
-})
+
+
+link.on('click', function(){
+    var seletor = $(this).attr('href');
+    var posicao = $(seletor).offset().top;
+    $('html, body').animate({scrollTop: posicao-100},1000);
+});
