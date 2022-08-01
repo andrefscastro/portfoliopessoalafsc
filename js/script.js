@@ -18,14 +18,3 @@ function scrollFunction() {
 
 /**Finished */
 
-/**Animation when click on a internal link */
-
-var link = $('a');
-
-
-
-link.on('click', function(){
-    var seletor = $(this).attr('href');
-    var posicao = $(seletor).offset().top;
-    $('html, body').animate({scrollTop: posicao-100},1000);
-});
