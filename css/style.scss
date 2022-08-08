@@ -742,7 +742,7 @@ header {
     header, .fixedHeader {
         margin: 10px 0;
         flex-wrap: wrap;
-        padding: 0;
+        padding: 0 0 40px 0;
         .logo {
             width: 200px;
             margin-bottom: 0;
@@ -754,13 +754,15 @@ header {
             ul {
                 flex-direction: row;
                 width: 100%;
-                justify-content: space-between;
+                justify-content: center;
 
                 li {
                     width: 110px;
+                    margin: 10px;
                     
                     a {
                         font-size: 12px;
+                        
                     }
                 }
             }
