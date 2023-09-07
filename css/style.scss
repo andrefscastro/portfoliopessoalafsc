@@ -743,7 +743,7 @@ header {
         margin: 10px 0;
         flex-wrap: wrap;
         .logo {
-            visibility: none;
+            display: none;
         }
 
         nav {
@@ -915,9 +915,7 @@ header {
         justify-content: center;
         margin: 0;
         padding: 0px;
-        .logo {
-            visibility: none;
-        }
+        
     }
 
     .main {
