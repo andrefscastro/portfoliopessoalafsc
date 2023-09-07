@@ -743,9 +743,7 @@ header {
         margin: 10px 0;
         flex-wrap: wrap;
         .logo {
-            width: 200px;
-            margin-bottom: 0;
-            background-size: contain;
+            visibility: none;
         }
 
         nav {
