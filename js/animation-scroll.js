@@ -23,7 +23,7 @@ sr.reveal('.projects-wrapper', {
 
 
 sr.reveal('.form-wrapper', {
-    distance: '300px',
+    distance: '400px',
     origin: 'top',
     duration: 3000 }, 
     );
